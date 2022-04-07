@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="block">
+        <h1>About Cheeps</h1>
+        <p>Cheeps is a project by me, Josh.  It's basically just one-word Twitter.</p>
+    </div>
+    <form class="block" method="POST" action="about">
+        <h1>This form will display your number in the color you choose!</h1>
+        <p>This is unrelated to the project, just gotta fill out some requirements (sorry Ms. O'Neal).</p>
+        <p>Number: </p><input class="field" type="number" min="1" max="10" name="num">
+        <p>Color: </p><input class="field" type="color" name="color"><br>
+        <input class="field" type="submit" value="Submit">
+
+        <!--Form result-->
+        {% if msg|length > 0 %}
+            <p>{{ msg }}</p>
+        {% endif %}
+        {% if num != none and color != none %}
+            <p style="color: {{ color }}">Form result: {{ num }}</p>
+        {% endif %}
+    </form>
+{% endblock %}

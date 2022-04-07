@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!--Create post form-->
+    {% if session.loggedin %}
+        <form method="POST" action="" class="block" id="post-form">
+            {{ form.csrf_token }}
+            
+            <h1>What's on your mind?</h1>
+            <div class="field">
+                <input type="text" autocomplete="off" placeholder="{{ form.word.label.text }}" name="{{ form.word.name }}">
+
+                {% if form.errors|length > 0 %}
+                    {{ form.errors }}
+                {% endif %}
+            </div>
+
+            {{ form.submit }}
+        </form>
+    {% endif %}
+
+    <!--Posts-->
+    <h1 class="block">Recent Cheeps</h1> 
+    {% for post in posts %}
+        <div class="block post">
+            <strong>{{ post.user }}</strong>
+            {{ post.date_created }}
+            <h2>{{ post.word }}</h2>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Cheeps</title>
+        <link rel="stylesheet" href="static/style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+        <!--Thanks to https://cheepcheepbirdseed.com/-->
+        <link rel="icon" href="static/cheep.png">
+    </head>
+    <body>
+        <div id="nav-bar">
+            <a href="home" id="logo" class="no-decoration">Cheeps</a>
+
+            <!--Icons-->
+            <div id="nav-icons">
+                <a href="about" class="no-decoration">About Us</a>
+                {% if session.loggedin %}
+                    <p>Signed in as {{ session.username }}</p>
+                    <a href="logout" class="no-decoration icon-button">Logout</a>
+                {% else %}
+                    <a href="login" class="no-decoration">Login</a>
+                    <a href="register" class="no-decoration icon-button">Register</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div id="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
