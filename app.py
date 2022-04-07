@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, request, session, url_for
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
-from .forms import RegisterForm, LoginForm, PostForm
+from forms import RegisterForm, LoginForm, PostForm
 from passlib.hash import sha256_crypt
 from datetime import datetime
 import json
