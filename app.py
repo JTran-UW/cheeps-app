@@ -7,10 +7,10 @@ from datetime import datetime
 import json
 
 app = Flask(__name__) #this has 2 underscores on each side
-app.secret_key = "&+#kgc^rl=baa_c^cw-db+ij462d%rv*)m+x+jbw*#((()^0^1"
+app.secret_key = "[INSERT SECRET KEY]"
 
 def get_sql_login():
-    with open("public/JoshuaTran/python/sqllogin.json", "r") as login:
+    with open("sqllogin.json", "r") as login:
         return json.load(login)
 
 # Authenticate with MySQL user db
