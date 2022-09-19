@@ -4,7 +4,7 @@
 Cheeps was the first in a two-part series of silly project ideas for Computer Science IV. This was a social media platform written with Flask that allowed users to only post a single word.
 
 ## Quickstart
-This project requires Python3.
+This project requires Python3 and a MySQL Sever.
 
 Get the project from git
 
@@ -13,6 +13,8 @@ Get the project from git
 Install required packages
 
 ```pip install -r requirements.txt```
+
+Fill out secret key and sql login info in app.py
 
 Run the project
 
